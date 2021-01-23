@@ -1,0 +1,8 @@
+version: '2'
+services:
+  percona:
+    image: 'percona:latest'
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD
