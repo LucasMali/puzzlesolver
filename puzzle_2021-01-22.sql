@@ -11,11 +11,13 @@ CREATE DATABASE `puzzle` CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `puzzle`;
 CREATE TABLE `process` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `sequence` varchar(255) NOT NULL DEFAULT '',
+  `puzzle` mediumint(7) unsigned NOT NULL DEFAULT '0',
+  `sequence` varchar(50) NOT NULL DEFAULT '',
   `solved` tinyint(1) NOT NULL DEFAULT '0',
-  `solved_sequence` varchar(255) NOT NULL DEFAULT '',
+  `solved_sequence` varchar(50) NOT NULL DEFAULT '',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `puzzle` (`puzzle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

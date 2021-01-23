@@ -10,7 +10,8 @@ namespace App;
 class Puzzle
 {
     const SOLUTION = [1,2,3,4,5,6,7];
-    public $current;
+    public \SplStack $current;
+    public array $problem;
 
     /**
      * Constructor function
@@ -19,6 +20,7 @@ class Puzzle
      */
     public function __construct(array $current)
     {
+        $this->problem = $current;
         $this->current = new \SplStack();
         foreach($current as $value)
         {
